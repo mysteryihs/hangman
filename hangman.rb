@@ -7,6 +7,9 @@ use Rack::Session::Cookie, :key => 'rack.session',
 
 
 get '/' do
+	if session['secret_word'].nil? || session['secret_word_hidden'].nil?
+		redirect to('/new')
+	end
 	input = params['guess']
 	message = ""
 	message = eval_answer(input)
