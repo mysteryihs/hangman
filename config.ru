@@ -1,2 +1,2 @@
-require './caesar_cipher'
+require './hangman'
 run Sinatra::Application
